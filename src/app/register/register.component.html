@@ -1,0 +1,32 @@
+<div class="register-container">
+  <h2>Register</h2>
+  <form [formGroup]="form" (submit)="submit()">
+    <input
+      formControlName="name"
+      class="form-control"
+      type="text"
+      placeholder="Name"
+    />
+    <input
+      formControlName="email"
+      class="form-control"
+      type="email"
+      placeholder="Email"
+    />
+    <input
+      formControlName="pass"
+      class="form-control"
+      type="password"
+      placeholder="Password"
+    />
+    <input
+      formControlName="confirmPass"
+      class="form-control"
+      type="password"
+      placeholder="Confirm Password"
+    />
+    <div class="btn-register-container">
+      <button class="btn-register" type="submit">Submit</button>
+    </div>
+  </form>
+</div>

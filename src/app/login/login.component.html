@@ -1,0 +1,22 @@
+<div class="login-container">
+  <h2>Login</h2>
+  <form [formGroup]="form" (submit)="onSubmit()">
+    <input
+      formControlName="email"
+      class="form-control"
+      type="email"
+      placeholder="Email"
+    />
+
+    <input
+      formControlName="pass"
+      class="form-control"
+      type="password"
+      placeholder="Password"
+    />
+
+    <div class="btn-login-container">
+      <button class="btn-login" type="submit">Sign in</button>
+    </div>
+  </form>
+</div>

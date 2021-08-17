@@ -1,0 +1,51 @@
+.register-container {
+  display: grid;
+  justify-content: center;
+  background: #f7f2f2;
+  border: 1px solid #e7a90b;
+
+  h2 {
+    color: #b8860b;
+    text-align: center;
+  }
+
+  form {
+    display: grid;
+    justify-content: center;
+    grid-gap: 20px;
+    .form-control {
+      width: 300px;
+      height: 35px;
+      border: 1px solid #e7a90b;
+      border-radius: 6px;
+      outline: none;
+      &::placeholder {
+        color: #e7a90b;
+        text-align: center;
+      }
+    }
+
+    .btn-register-container {
+      width: 100%;
+      display: grid;
+      justify-content: center;
+
+      .btn-register {
+        width: 90px;
+        height: 40px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #06d006;
+        border-radius: 5px;
+        border: 1px solid #06d006;
+        cursor: pointer;
+        margin-bottom: 10px;
+        outline: none;
+        &:hover {
+          background: #6ebd14;
+          transform: skew(-5deg);
+        }
+      }
+    }
+  }
+}

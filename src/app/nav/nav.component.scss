@@ -1,0 +1,19 @@
+.navbar {
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  margin: 20px 0;
+  .auth-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .nav-link {
+      text-decoration: none;
+      color: #b8860b;
+      font-size: 18px;
+      font-weight: 700;
+      &:hover {
+        color: #89cc23;
+      }
+    }
+  }
+}
