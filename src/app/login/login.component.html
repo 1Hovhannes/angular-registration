@@ -1,19 +1,49 @@
 <div class="login-container">
   <h2>Login</h2>
-  <form [formGroup]="form" (submit)="onSubmit()">
-    <input
-      formControlName="email"
-      class="form-control"
-      type="email"
-      placeholder="Email"
-    />
+  <form class="form" [formGroup]="formLogin" (submit)="onSubmit()">
+    <div class="form-group">
+      <input
+        class="form-control"
+        type="text"
+        name="username"
+        id="username"
+        placeholder="Name"
+        formControlName="username"
+        [ngClass]="username().errors && username().touched ? 'hasError' : ''"
+      />
+      <div
+        class="error"
+        *ngIf="
+          username().errors &&
+          username().touched &&
+          username().hasError('required')
+        "
+      >
+        Please enter your name
+      </div>
+    </div>
 
-    <input
-      formControlName="pass"
-      class="form-control"
-      type="password"
-      placeholder="Password"
-    />
+    <div class="form-group">
+      <input
+        class="form-control"
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Password"
+        formControlName="password"
+        [ngClass]="password().errors && password().touched ? 'hasError' : ''"
+      />
+      <div
+        class="error"
+        *ngIf="
+          username().errors &&
+          username().touched &&
+          username().hasError('required')
+        "
+      >
+        Please enter your name
+      </div>
+    </div>
 
     <div class="btn-login-container">
       <button class="btn-login" type="submit">Sign in</button>

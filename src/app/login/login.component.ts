@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  FormControl,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -7,22 +12,26 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  form!: FormGroup;
+  formLogin!: FormGroup;
 
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
-    this.form = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      pass: ['', [Validators.required, Validators.minLength(5)]],
+    this.formLogin = this.fb.group({
+      username: ['', [Validators.required]],
+      password: ['', [Validators.required, Validators.minLength(5)]],
     });
   }
 
-  get f() {
-    return this.form.controls;
+  username() {
+    return this.formLogin.get('username') as FormControl;
+  }
+  password() {
+    return this.formLogin.get('password') as FormControl;
   }
 
   onSubmit() {
-    console.log('Submited!', this.form.value);
+    console.log('Submited!', this.formLogin.value);
+    this.formLogin.reset();
   }
 }

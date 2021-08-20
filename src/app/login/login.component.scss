@@ -9,19 +9,31 @@
     text-align: center;
   }
 
-  form {
+  .form {
     display: grid;
     justify-content: center;
     grid-gap: 20px;
-    .form-control {
-      width: 300px;
-      height: 35px;
-      border: 1px solid #e7a90b;
-      border-radius: 6px;
-      outline: none;
-      &::placeholder {
-        color: #e7a90b;
-        text-align: center;
+
+    .form-group {
+      .form-control {
+        width: 300px;
+        height: 35px;
+        border: 1px solid #e7a90b;
+        border-radius: 6px;
+        outline: none;
+        &::placeholder {
+          color: #e7a90b;
+          text-align: center;
+        }
+      }
+
+      .error {
+        color: red;
+        margin-bottom: 10px;
+      }
+
+      .hasError {
+        border: 2px solid red;
       }
     }
 
