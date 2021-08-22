@@ -9,10 +9,18 @@
     text-align: center;
   }
 
-  .form {
+  .formLogin {
     display: grid;
     justify-content: center;
     grid-gap: 20px;
+
+    .warningLogin {
+      width: 100%;
+      color: #ff1b1b;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 700;
+    }
 
     .form-group {
       .form-control {

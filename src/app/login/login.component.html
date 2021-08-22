@@ -1,22 +1,25 @@
 <div class="login-container">
   <h2>Login</h2>
-  <form class="form" [formGroup]="formLogin" (submit)="onSubmit()">
+  <form class="formLogin" [formGroup]="formLogin" (submit)="onSubmit()">
+    <p class="warningLogin" *ngIf="warning">
+      Please fill in the fields correctly
+    </p>
     <div class="form-group">
       <input
         class="form-control"
         type="text"
-        name="username"
-        id="username"
+        name="userName"
+        id="userName"
         placeholder="Name"
-        formControlName="username"
-        [ngClass]="username().errors && username().touched ? 'hasError' : ''"
+        formControlName="userName"
+        [ngClass]="userName().errors && userName().touched ? 'hasError' : ''"
       />
       <div
         class="error"
         *ngIf="
-          username().errors &&
-          username().touched &&
-          username().hasError('required')
+          userName().errors &&
+          userName().touched &&
+          userName().hasError('required')
         "
       >
         Please enter your name
@@ -36,12 +39,15 @@
       <div
         class="error"
         *ngIf="
-          username().errors &&
-          username().touched &&
-          username().hasError('required')
+          password().errors &&
+          password().touched &&
+          password().hasError('required')
         "
       >
-        Please enter your name
+        Please enter your password
+      </div>
+      <div *ngIf="password().hasError('minlength')">
+        Minimum password length 5
       </div>
     </div>
 

@@ -1,31 +1,3 @@
-// import { Component, OnInit } from '@angular/core';
-// import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
-// @Component({
-//   selector: 'app-register',
-//   templateUrl: './register.component.html',
-//   styleUrls: ['./register.component.scss'],
-// })
-// export class RegisterComponent implements OnInit {
-//   form!: FormGroup;
-
-//   constructor(private fb: FormBuilder) {}
-
-//   ngOnInit(): void {
-//     this.form = this.fb.group({
-//       name: ['', Validators.required],
-//       email: ['', Validators.required],
-//       pass: ['', Validators.required],
-//       confirmPass: ['', Validators.required],
-//     });
-//   }
-
-//   submit() {
-//     console.log(this.form.value);
-//     this.form.reset();
-//   }
-// }
-
 import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
@@ -41,6 +13,7 @@ import {
 })
 export class RegisterComponent implements OnInit {
   formRegister!: FormGroup;
+  warning: boolean = false;
 
   constructor(private fb: FormBuilder) {}
 
@@ -68,7 +41,13 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('Submited!', this.formRegister.value);
+    if (this.formRegister.valid) {
+      this.warning = false;
+      console.log('Submited!', this.formRegister.value);
+    } else {
+      this.warning = true;
+      console.log('Please fill in the fields correctly');
+    }
     this.formRegister.reset();
   }
 }

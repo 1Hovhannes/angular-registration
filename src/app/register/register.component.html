@@ -1,6 +1,10 @@
 <div class="register-container">
   <h2>Register</h2>
   <form class="formRegister" [formGroup]="formRegister" (submit)="onSubmit()">
+    <p class="warningRegister" *ngIf="warning">
+      Please fill in the fields correctly
+    </p>
+
     <div class="form-group">
       <input
         class="form-control"
@@ -86,6 +90,9 @@
         "
       >
         Please enter your confirm password
+      </div>
+      <div *ngIf="password().hasError('minlength')">
+        Minimum password length 5
       </div>
     </div>
 
